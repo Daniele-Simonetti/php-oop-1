@@ -2,10 +2,7 @@
 class Movie
 {
   public $title;
-  // public $director;
   public $year;
-  // public $mainAcotr;
-  // public $vote;
   public $genre;
   public $minutes;
 
@@ -34,10 +31,14 @@ class Movie
 $moovie = new Movie('ciao', 2020, 120);
 // var_dump($moovie->genre);
 $moovie->setGenre();
-echo '<h1>titolo film:</h1>', $moovie->title;
-echo '<h2>genere:</h2>', $moovie->genre;
+echo '<h1>titolo film:</h1>', $moovie->title, '<br>';
+echo 'anno di uscita: ', $moovie->year, '<br>';
+echo 'durata in minuti: ', $moovie->minutes, '<br>';
+echo 'genere: ', $moovie->genre, '<br>';
 
 $secondMoovie = new Movie('hola', 1915, 270);
 $secondMoovie->setGenre();
-echo '<h1>titolo film:</h1>', $secondMoovie->title;
-echo '<h2>genere:</h2>', $secondMoovie->genre;
+echo '<h1>titolo film:</h1>', $secondMoovie->title, '<br>';
+echo 'anno di uscita: ', $secondMoovie->year, '<br>';
+echo 'durata in minuti: ', $secondMoovie->minutes, '<br>';
+echo 'genere: ', $secondMoovie->genre, '<br>';
