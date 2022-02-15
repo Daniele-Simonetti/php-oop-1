@@ -1,5 +1,5 @@
 <?php
-class Movie 
+class Movie
 {
   public $title;
   // public $director;
@@ -9,17 +9,10 @@ class Movie
   public $genre;
   public $minutes;
 
-  public function __construct($title, $year)
+  public function __construct($title, $year, $minutes)
   {
     $this->title = $title;
     $this->year = $year;
-  }
-  public function getMinutes()
-  {
-    return $this->minutes;
-  }
-  public function setMinutes($minutes)
-  {
     $this->minutes = $minutes;
   }
   public function getGenre()
@@ -27,22 +20,24 @@ class Movie
     return $this->genre;
   }
 
-  public function setGenre($minutes) 
+  public function setGenre()
   {
-    if ($minutes <= 120) {
+    if ($this->minutes <= 120) {
       $this->genre = 'cortometraggio';
     } else {
       $this->genre = 'documentario';
     }
   }
-    
 }
 
 
-$moovie = new Movie('ciao amore', 2020);
-// $moovie->setMinutes(120);
-$moovie->setMinutes(120);
-echo $moovie->minutes;
-var_dump($moovie->setGenre($minutes));
-// echo $moovie->setGenre($this->minutes);
+$moovie = new Movie('ciao', 2020, 120);
+// var_dump($moovie->genre);
+$moovie->setGenre();
+echo '<h1>titolo film:</h1>', $moovie->title;
+echo '<h2>genere:</h2>', $moovie->genre;
 
+$secondMoovie = new Movie('hola', 1915, 270);
+$secondMoovie->setGenre();
+echo '<h1>titolo film:</h1>', $secondMoovie->title;
+echo '<h2>genere:</h2>', $secondMoovie->genre;
